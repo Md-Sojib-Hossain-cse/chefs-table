@@ -1,6 +1,5 @@
 import { FaRegUserCircle } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
-import './Navbar.css';
 
 const Navbar = () => {
     return (

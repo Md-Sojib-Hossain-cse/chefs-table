@@ -1,6 +1,7 @@
 import './App.css'
 import Banner from './Components/Banner/Banner'
 import Navbar from './Components/Navbar/Navbar'
+import Recipedes from './Components/Recipedes/Recipedes'
 
 function App() {
 
@@ -11,6 +12,9 @@ function App() {
         <Navbar></Navbar>
         <Banner></Banner>
       </header>
+      <main className='container max-w-[1320px] mx-auto font-lexend'>
+        <Recipedes></Recipedes>
+      </main>
     </>
   )
 }
