@@ -1,12 +1,16 @@
 import './App.css'
-import Header from './Components/Header/Header'
+import Banner from './Components/Banner/Banner'
+import Navbar from './Components/Navbar/Navbar'
 
 function App() {
 
 
   return (
     <>
-      <Header></Header>
+      <header className='container max-w-[1320px] mx-auto font-lexend'>
+        <Navbar></Navbar>
+        <Banner></Banner>
+      </header>
     </>
   )
 }
