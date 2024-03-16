@@ -16,7 +16,7 @@ function App() {
       </header>
       <main className='container max-w-[1320px] mx-auto font-lexend'>
         <Recipedes></Recipedes>
-        <div className='grid grid-cols-1 lg:grid-cols-3 mt-6 md:mt-10 lg:mt-12'>
+        <div className='grid grid-cols-1 lg:grid-cols-3 mt-6 md:mt-10 lg:mt-12 gap-6'>
           <RecipeCards></RecipeCards>
           <CookingDetails></CookingDetails>
         </div>

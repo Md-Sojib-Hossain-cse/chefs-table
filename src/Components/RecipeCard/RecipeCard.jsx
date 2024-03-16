@@ -32,7 +32,7 @@ const RecipeCard = () => {
                         <div className='flex gap-2'><IoMdTime /> <p>30 minutes</p></div>
                         <div className='flex gap-2'><FaFire /> <p>600 calories</p></div>
                     </div>
-                    <button className='font-lexend text-[#150B2B] text-lg font-medium leading-6 bg-[#0BE58A] rounded-[50px] py-3 px-6'>Want to Cook</button>
+                    <button className='font-lexend text-[#150B2B] text-lg font-medium leading-6 bg-[#0BE58A] hover:bg-[#B2FFDE] rounded-[50px] py-3 px-6 transition duration-500'>Want to Cook</button>
                 </div>
             </div>
         </div>
