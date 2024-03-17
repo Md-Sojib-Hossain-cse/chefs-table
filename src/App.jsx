@@ -17,7 +17,8 @@ function App() {
 
   const handleWantToCook = item => {
     const isExist = wantToCook.find(wtcItem => item.recipe_id === wtcItem.recipe_id);
-    if (!isExist) {
+    const isExistCC = currentlyCook.find(wtcItem => item.recipe_id === wtcItem.recipe_id)
+    if (!isExist && !isExistCC) {
       const newItems = [...wantToCook, item];
       setWantToCook(newItems);
     }
