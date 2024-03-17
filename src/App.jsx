@@ -11,10 +11,10 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
 
   const [wantToCook, setWantToCook] = useState([]);
+  const [currentlyCook , setCurrentlyCook] = useState([]);
 
   const handleWantToCook = item => {
-
-    const isExist = wantToCook.find(wtcItem => item.recipe_id == wtcItem.recipe_id);
+    const isExist = wantToCook.find(wtcItem => item.recipe_id === wtcItem.recipe_id);
     if (!isExist) {
       const newItems = [...wantToCook, item];
       setWantToCook(newItems);
@@ -24,6 +24,14 @@ function App() {
     }
   };
 
+
+  const handleCurrentlyCook = (cookItem) => {
+    // remove cookItem from cook Item table 
+    const remainingItems = wantToCook.filter( wtcItems =>wtcItems.recipe_id !== cookItem.recipe_id)
+    setWantToCook(remainingItems);
+    const newItems = [...currentlyCook , cookItem];
+    setCurrentlyCook(newItems);
+  }
 
 
   return (
@@ -37,7 +45,12 @@ function App() {
         <ToastContainer></ToastContainer>
         <div className='grid grid-cols-1 lg:grid-cols-3 mt-6 md:mt-10 lg:mt-12 gap-6'>
           <RecipeCards handleWantToCook={handleWantToCook}></RecipeCards>
-          <CookingDetails wantToCook={wantToCook} ToastContainer={ToastContainer}></CookingDetails>
+          <CookingDetails 
+          wantToCook={wantToCook} 
+          ToastContainer={ToastContainer}
+          handleCurrentlyCook={handleCurrentlyCook}
+          currentlyCook={currentlyCook}
+          ></CookingDetails>
         </div>
       </main>
     </>
