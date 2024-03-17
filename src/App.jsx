@@ -12,6 +12,8 @@ function App() {
 
   const [wantToCook, setWantToCook] = useState([]);
   const [currentlyCook , setCurrentlyCook] = useState([]);
+  const [totalCookTime , setTotalCookTime] = useState(0);
+  const [totalCalories , setTotalCalories] = useState(0);
 
   const handleWantToCook = item => {
     const isExist = wantToCook.find(wtcItem => item.recipe_id === wtcItem.recipe_id);
@@ -29,8 +31,14 @@ function App() {
     // remove cookItem from cook Item table 
     const remainingItems = wantToCook.filter( wtcItems =>wtcItems.recipe_id !== cookItem.recipe_id)
     setWantToCook(remainingItems);
+    //added item to currently cook
     const newItems = [...currentlyCook , cookItem];
     setCurrentlyCook(newItems);
+    //calculate total Time and calories
+    const totalTime = totalCookTime + cookItem.preparing_time;
+    setTotalCookTime(totalTime);
+    const totalCal = totalCalories + cookItem.calories;
+    setTotalCalories(totalCal); 
   }
 
 
@@ -50,6 +58,8 @@ function App() {
           ToastContainer={ToastContainer}
           handleCurrentlyCook={handleCurrentlyCook}
           currentlyCook={currentlyCook}
+          totalCookTime={totalCookTime}
+          totalCalories={totalCalories}
           ></CookingDetails>
         </div>
       </main>

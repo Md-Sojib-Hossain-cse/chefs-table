@@ -1,8 +1,9 @@
 import CurrentlyCooking from "../CurrentlyCooking/CurrentlyCooking";
+import TCCount from "../TCCount/TCCount";
 import WantToCook from "../WantToCook/WantToCook";
 import PropTypes from "prop-types";
 
-const CookingDetails = ({wantToCook , handleCurrentlyCook , currentlyCook}) => {
+const CookingDetails = ({wantToCook , handleCurrentlyCook , currentlyCook , totalCookTime , totalCalories}) => {
     return (
         <div className="col-span-1">
             <div className="border-[1px] border-[#28282833] rounded-2xl">
@@ -42,16 +43,7 @@ const CookingDetails = ({wantToCook , handleCurrentlyCook , currentlyCook}) => {
                             }
                         </tbody>
                     </table>
-                    <div className="pt-4 flex justify-end gap-5 font-lexend text-[#282828CC] text-base font-medium leading-6 pr-5">
-                        <div>
-                            <p>Total Time =</p>
-                            <p><span>45</span> minutes</p>
-                        </div>
-                        <div>
-                            <p>Total Calories = </p>
-                            <p><span>1050</span> calories</p>
-                        </div>
-                    </div>
+                    <TCCount totalCookTime={totalCookTime} totalCalories={totalCalories}></TCCount>
                 </div>
             </div>
         </div>
@@ -63,6 +55,8 @@ CookingDetails.propTypes = {
     wantToCook : PropTypes.array.isRequired,
     handleCurrentlyCook : PropTypes.func.isRequired,
     currentlyCook : PropTypes.array.isRequired,
+    totalCookTime : PropTypes.number.isRequired,
+    totalCalories : PropTypes.number.isRequired,
 }
 
 
