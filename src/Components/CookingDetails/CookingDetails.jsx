@@ -7,7 +7,7 @@ const CookingDetails = ({wantToCook}) => {
         <div className="col-span-1">
             <div className="border-[1px] border-[#28282833] rounded-2xl">
                 <div>
-                    <h3 className="text-[#282828] font-lexend text-2xl font-semibold leading-7 text-center w-10/12 mx-auto pb-4 pt-8 border-b-[1px] border-[#28282826]">Want to cook: <span>01</span></h3>
+                    <h3 className="text-[#282828] font-lexend text-2xl font-semibold leading-7 text-center w-10/12 mx-auto pb-4 pt-8 border-b-[1px] border-[#28282826]">Want to cook: {wantToCook.length}</h3>
                     <table className="w-full mt-6">
                         <thead>
                             <tr className="text-[#878787] font-fira-sans text-base font-medium leading-5 flex justify-around items-center pb-4 px-4 w-full">
